@@ -12,7 +12,7 @@ switch($GLOBALS['menu']){
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
-                <a class="navbar-brand">
+                <a class="navbar-brand" href="/">
                     <img src="/img/logo-nsa.svg" width="318" height="47" alt="NSA"  />
                 </a>
             <ul class="navbar-nav mb-2 mb-lg-0">

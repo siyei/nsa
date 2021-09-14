@@ -31,11 +31,11 @@
                 <h4 class="text-white fs-6 fw-bold">Nuestros locales</h4>
                 <div class="flex-center">
                     <ul class="footer-list">
-                        <li><i class="zwicon-chevron-right"></i> <a href="/locales/asuncion">Asunción</a></li>
-                        <li><i class="zwicon-chevron-right"></i> <a href="/locales/encarnacion">Encarnación</a></li>
-                        <li><i class="zwicon-chevron-right"></i> <a href="/locales/ciudad-del-este">Ciudad del Este</a></li>
-                        <li><i class="zwicon-chevron-right"></i> <a href="/locales/buenos-aires">Buenos Aires</a></li>
-                        <li><i class="zwicon-chevron-right"></i> <a href="/locales/brasil">Brasil</a></li>
+                        <li><i class="zwicon-chevron-right"></i> <a href="/">Asunción</a></li>
+                        <li><i class="zwicon-chevron-right"></i> <a href="/">Encarnación</a></li>
+                        <li><i class="zwicon-chevron-right"></i> <a href="/">Ciudad del Este</a></li>
+                        <li><i class="zwicon-chevron-right"></i> <a href="/">Buenos Aires</a></li>
+                        <li><i class="zwicon-chevron-right"></i> <a href="/">Brasil</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,16 +62,12 @@
             <div class="col-md-2">
                 <h4 class="text-white fs-6 fw-bold mb-4">Descargá nuestra app</h4>
                 <div class="flex-center">
-                    <Link href="/">
-                        <a class="dow-app mb-2">
+                        <a class="dow-app mb-2" href="https://play.google.com/store/apps/details?id=com.opentech.py.nsa&hl=es&gl=US" target="_blank">
                             <img src="/img/google-play-badge.png" class="img-fluid" />
                         </a>
-                    </Link>
-                    <Link href="/">
-                        <a class="dow-app">
+                        <a class="dow-app" href="/">
                             <img src="/img/app_store_badge.svg" class="img-fluid"  />
                         </a>
-                    </Link>
                     <div class="space-line-bottom"></div>
                     <div class="isos mt-3">
                         <img src="/img/isos.png" class="img-fluid" />

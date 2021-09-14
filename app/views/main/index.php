@@ -1,41 +1,6 @@
 <?php Template::load('/main/head.php'); ?>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="destinomodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Destino / Encarnación</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">C.I.:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Celular:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Mensajer:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Registrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <?php Template::load('/main/menu.php'); ?>
     <section class="cd-hero js-cd-hero js-cd-autoplay">
 		<ul class="cd-hero__slider">
@@ -137,22 +102,24 @@
             </div>
             <div class="row">
                 <!-- card -->
+                <?php foreach($this->destinos as $destino) { ?>
                 <div class="col-md-3 mb-4">
-                    <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#destinomodal">
+                    <a href="/destinos-detalles/<?=$destino->iddestino;?>" class="card-link">
                         <div class="card card1">
-                            <img src="/img/lugares/thumbnail-mbatovi.jpg" class="img-fluid" />
+                            <img src="/img/destinos/<?=$destino->thumbnail;?>"" class="img-fluid" />
                             <div class="card-body">
-                                <span class="badge rounded-pill bg-primary-badge mb-3">Paraguay</span>
-                                <h4>Encarnación</h4>
-                                <p class="card-text">Desde: 280.000 Gs.</p>
+                                <span class="badge rounded-pill bg-primary-badge mb-3"><?=$destino->pais;?></span>
+                                <h4><?=$destino->destino;?></h4>
+                                <p class="card-text">Desde: <?=toMil($destino->precio);?> Gs.</p>
                             </div>
                         </div>
                     </a>
                 </div>
+                <?php } ?>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
-                    <button class="btn btn-primary">Accedé a nuestra lista completa</button>
+                    <a href="/destinos" class="btn btn-primary">Accedé a nuestra lista completa</a>
                 </div>
             </div>
         </div>
@@ -170,6 +137,15 @@
                 <!-- card -->
                 <div class="col-md-3 mb-4">
                     <div class="card card2">
+                        <img src="/img/servicios/envio-dinero.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Envío de dinero</h4>
+                            <a href="/envio-de-dinero">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
                         <img src="/img/servicios/turismo.jpg" class="img-fluid" />
                         <div class="card-body">
                             <h4>Turismo</h4>
@@ -177,12 +153,30 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
+                        <img src="/img/servicios/destino.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Destinos</h4>
+                            <a href="/destinos">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
+                        <img src="/img/servicios/puntos-voy.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Puntos VOY</h4>
+                            <a href="/">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
                     <button class="btn btn-primary">Accedé a nuestra lista completa</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- fin nuestros servicios -->

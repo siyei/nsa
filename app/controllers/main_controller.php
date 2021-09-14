@@ -4,6 +4,8 @@ class MainController extends ActionController {
 	function index(){
 		$GLOBALS['title']	= "NSA - Bienvenidos";
 		$GLOBALS['menu'] 	= 1;
+
+		$this->destinos  = Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY de.iddestino ASC LIMIT 4");
 	}	
 	function envio_de_dinero(){
 		$GLOBALS['title']	= "NSA - Envio de dinero";
@@ -16,6 +18,16 @@ class MainController extends ActionController {
 	function destinos(){
 		$GLOBALS['title']	= "NSA - Destinos";
 		$GLOBALS['menu'] 	= 0;
+	}
+	function destinos_detalles(){
+		$GLOBALS['title']	= "NSA - Destinos detalles";
+		$GLOBALS['menu'] 	= 0;
+
+		$iddestino 			= $this->params['get']['iddestino'];
+		
+
+		$this->data  		= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais WHERE de.iddestino = '$iddestino' ORDER BY de.iddestino ASC LIMIT 4");
+		$this->allDestino 	= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY de.iddestino ASC");
 	}
 	function encomiendas(){
 		$GLOBALS['title']	= "NSA - Encomiendas";

@@ -115,7 +115,95 @@ class SistemaController extends ActionController {
 		echo json_encode($r);
 		$this->render(false);
 	}
-	
+	//----------------
+	// DESTINOS
+	//----------------
+	function listdestinos(){
+		ifLogin();
+		$GLOBALS['title'] 	= "Destinos - Lista";	
+		$GLOBALS['menu']	= 0;
+		$this->data 		= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY pais DESC");
+	}
+	function adddestino(){
+		$method = $_SERVER['REQUEST_METHOD'];
+		if($method === 'GET'){
+			$GLOBALS['title'] 	= "Agregar destino";	
+			$GLOBALS['menu']	= 0;
+			$this->pais 		= Pais::find_by_sql("SELECT * FROM pais ORDER BY pais ASC");
+		}elseif($method === 'POST'){
+			$newData 			= new Destino();
+			$newData->idpais 	= $this->params['post']['idpais'];
+			$newData->destino 	= $this->params['post']['destino'];
+			$newData->precio 	= $this->params['post']['precio'];
+			$newData->save();
+
+			$r = [
+				'codigo'		=> 0,
+				'iddestino' 	=> $newData->iddestino
+			];
+			echo json_encode($r);
+			exit();
+		}
+	}
+	function editdestino(){
+		$method = $_SERVER['REQUEST_METHOD'];
+		if($method === 'GET'){
+			$GLOBALS['title'] 	= "Editar destino";	
+			$GLOBALS['menu']	= 0;
+
+			$iddestino 			= $this->params['get']['iddestino'];
+
+			$this->pais 		= Pais::find_by_sql("SELECT * FROM pais ORDER BY pais ASC");
+
+			$this->data 		= Destino::find($iddestino);
+		}elseif($method === 'POST'){
+			$newData 			= new Destino();
+			$newData->idpais 	= $this->params['post']['idpais'];
+			$newData->destino 	= $this->params['post']['destino'];
+			$newData->precio 	= $this->params['post']['precio'];
+			$newData->save();
+
+			$r = [
+				'codigo'		=> 0,
+				'iddestino' 	=> $newData->iddestino
+			];
+			echo json_encode($r);
+			exit();
+		}
+	}
+	function sabethumbnail(){
+		$handle 	= new upload($_FILES['file']);
+		$type 		= explode('.', $_FILES['file']['name']);
+		$type 		= strtolower(array_pop($type));
+		// traigo los parametros POST
+		$iddestino 	= $this->params['post']['iddestino'];
+
+		if ($handle->uploaded) {
+			$file_name 						= sha1($_FILES['file']['name'].date('i:s'));
+			$handle->file_new_name_body    = $file_name;
+			$handle->image_resize          = true;
+			$handle->image_ratio_crop      = true;
+			$handle->image_x               = 554;
+			$handle->image_y               = 308;
+			$handle->process('img/destinos/');
+			$file_name 						= $file_name.'.'.$type; 
+			if ($handle->processed) {
+				// guardo en la DB los datos nuevos del logo
+				$sabeThumbnail 				= Destino::find($iddestino);
+				$sabeThumbnail->thumbnail 	= $file_name;
+				$sabeThumbnail->save();
+				$r = array(	
+					"codigo" 	=> 0
+					);
+				echo json_encode($r);
+				// limpio la memoria
+				$handle->clean();
+			}else{
+				echo 'error : ' . $handle->error;
+			}
+		}
+		$this->render(false);
+	}
 }
 
 ?>

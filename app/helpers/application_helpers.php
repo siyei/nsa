@@ -51,24 +51,8 @@ function quitar_tildes($cadena) {
 	$texto = str_replace($no_permitidas, $permitidas ,$cadena);
 	return $texto;
 }
-function setStringCategoria($str){
-	$str = str_replace(' ', '_', $str);
-	$str = strtolower($str);
-	return quitar_tildes($str);
-}
-function showMenu($limit = null){
-	if($limit != null){
-		$categorias = Categoria::find_by_sql("SELECT * FROM categorias LIMIT 0, $limit");
-	}else{
-		//echo 'tdod'.$limit;
-		$categorias = Categoria::all();
-	}
-	//echo 'fer'.$limit;
-	//exit();
-	return $categorias;
-}
-function showMarcas(){
-	return Marca::all();
+function toMil($num){
+	echo number_format($num, 0, ',', '.');
 }
 
 ?>

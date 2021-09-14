@@ -42,9 +42,9 @@ switch($GLOBALS['menu']){
             </a>
         </li>
         <li <?=$c?>>
-            <a href="/categoria">
+            <a href="/listdestinos">
                 <i class="pe-7s-network"></i>
-                <p>Categorías</p>
+                <p>Destinos</p>
             </a>
         </li>
         <li <?=$d?>>

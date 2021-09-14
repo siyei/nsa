@@ -21,6 +21,7 @@
                                     <h4 class="title">Agregar Banner</h4>
                                 </div>
                                 <div class="content">
+                                    
                                     <div id="uplogo" style="margin-bottom: 20px;">Upload</div>
                                     <div id="upbanner" style="margin-bottom: 20px;">Upload</div>
                                     <div class="row">
