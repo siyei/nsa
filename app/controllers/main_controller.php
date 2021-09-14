@@ -18,6 +18,8 @@ class MainController extends ActionController {
 	function destinos(){
 		$GLOBALS['title']	= "NSA - Destinos";
 		$GLOBALS['menu'] 	= 0;
+
+		$this->allDestino 	= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY de.iddestino ASC");
 	}
 	function destinos_detalles(){
 		$GLOBALS['title']	= "NSA - Destinos detalles";

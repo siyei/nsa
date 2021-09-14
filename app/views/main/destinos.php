@@ -29,16 +29,20 @@
             </div>
             <div class="row">
                 <!-- card -->
+                <?php foreach($this->allDestino as $destino) { ?>
                 <div class="col-md-3 mb-4">
-                    <div class="card card1">
-                        <img src="/img/lugares/thumbnail-mbatovi.jpg" class="img-fluid" />
-                        <div class="card-body">
-                            <span class="badge rounded-pill bg-primary-badge mb-3">Paraguay</span>
-                            <h4>Encarnación</h4>
-                            <p class="card-text">Desde: 280.000 Gs.</p>
+                    <a href="/destinos-detalles/<?=$destino->iddestino;?>" class="card-link">
+                        <div class="card card1">
+                            <img src="/img/destinos/<?=$destino->thumbnail;?>"" class="img-fluid" />
+                            <div class="card-body">
+                                <span class="badge rounded-pill bg-primary-badge mb-3"><?=$destino->pais;?></span>
+                                <h4><?=$destino->destino;?></h4>
+                                <p class="card-text">Desde: <?=toMil($destino->precio);?> Gs.</p>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+                <?php } ?>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-3 text-center">

@@ -125,6 +125,7 @@ class SistemaController extends ActionController {
 		$this->data 		= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY pais DESC");
 	}
 	function adddestino(){
+		ifLogin();
 		$method = $_SERVER['REQUEST_METHOD'];
 		if($method === 'GET'){
 			$GLOBALS['title'] 	= "Agregar destino";	
@@ -135,6 +136,7 @@ class SistemaController extends ActionController {
 			$newData->idpais 	= $this->params['post']['idpais'];
 			$newData->destino 	= $this->params['post']['destino'];
 			$newData->precio 	= $this->params['post']['precio'];
+			$newData->detalles 	= $this->params['post']['detalles'];
 			$newData->save();
 
 			$r = [
@@ -146,6 +148,7 @@ class SistemaController extends ActionController {
 		}
 	}
 	function editdestino(){
+		ifLogin();
 		$method = $_SERVER['REQUEST_METHOD'];
 		if($method === 'GET'){
 			$GLOBALS['title'] 	= "Editar destino";	
@@ -157,10 +160,12 @@ class SistemaController extends ActionController {
 
 			$this->data 		= Destino::find($iddestino);
 		}elseif($method === 'POST'){
-			$newData 			= new Destino();
+			$iddestino 			= $this->params['post']['iddestino'];
+			$newData 			= Destino::find($iddestino);
 			$newData->idpais 	= $this->params['post']['idpais'];
 			$newData->destino 	= $this->params['post']['destino'];
 			$newData->precio 	= $this->params['post']['precio'];
+			$newData->detalles 	= $this->params['post']['detalles'];
 			$newData->save();
 
 			$r = [
@@ -172,6 +177,7 @@ class SistemaController extends ActionController {
 		}
 	}
 	function sabethumbnail(){
+		ifLogin();
 		$handle 	= new upload($_FILES['file']);
 		$type 		= explode('.', $_FILES['file']['name']);
 		$type 		= strtolower(array_pop($type));

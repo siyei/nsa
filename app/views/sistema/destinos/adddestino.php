@@ -43,6 +43,10 @@
                                         <label>Precio</label>
                                         <input type="text" class="form-control" id="precio" name="precio" required="true" placeholder="Ej.: 280000">
                                     </div>
+                                    <div class="form-group">
+                                        <label>Detalles</label>
+                                        <textarea class="form-control" id="detalles" rows="6"></textarea>
+                                    </div>
 
                                     <div id="mjs"></div>
 
@@ -107,6 +111,7 @@
                 img1.reset();
                 $('#destino').val('');
                 $('#precio').val('');
+                $('#detalles').val('');
                 $('#btn-save').prop('disabled', false);
             }
         });
@@ -123,7 +128,8 @@
                     $.post('/adddestino', {
                         idpais: $('#idpais').val(),
                         destino: $('#destino').val(),
-                        precio: $('#precio').val()
+                        precio: $('#precio').val(),
+                        detalles: $('#detalles').val()
                     }, function(r) {
                         iddestino = r.iddestino;
                         img1.startUpload();

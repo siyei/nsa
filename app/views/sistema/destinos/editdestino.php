@@ -33,7 +33,11 @@
                                         <label>País</label>
                                         <select class="form-control" id="idpais">
                                             <?php foreach ($this->pais as $pais) { ?>
-                                                <option value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php if($pais->idpais == $this->data->idpais){ ?>
+                                                    <option selected value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php }else{ ?>
+                                                    <option value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php } ?>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -44,6 +48,10 @@
                                     <div class="form-group">
                                         <label>Precio</label>
                                         <input type="text" class="form-control" id="precio" name="precio" required="true" placeholder="Ej.: 280000" value="<?=$this->data->precio;?>" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Detalles</label>
+                                        <textarea class="form-control" id="detalles" rows="6"><?=$this->data->detalles;?></textarea>
                                     </div>
 
                                     <div id="mjs"></div>
@@ -89,7 +97,7 @@
             url: "/sabethumbnail",
             uploadStr: '<i class="fa fa-picture-o"></i> Cambiar imágen del destino',
             multiple: false,
-            autoSubmit: false,
+            autoSubmit: true,
             showPreview: true,
             dragDrop: true,
             sequential: true,
@@ -119,13 +127,15 @@
             } else {
                 $(this).prop('disabled', true);
                 mfx(2, "Procesando fotos...", "#mjs");
-                $.post('/adddestino', {
+                $.post('/editdestino', {
+                    iddestino : <?=$this->params['get']['iddestino'];?>,
                     idpais: $('#idpais').val(),
                     destino: $('#destino').val(),
-                    precio: $('#precio').val()
+                    precio: $('#precio').val(),
+                    detalles: $('#detalles').val()
                 }, function(r) {
-                    iddestino = r.iddestino;
-                    img1.startUpload();
+                    $('#btn-save').prop('disabled', false);
+                    mfx(0, "Datos editados.", "#mjs");
                 }, 'json');
             }
         });
