@@ -33,9 +33,9 @@ Modificar el archivo [./core/config.php] y agregar los datos en los campos corre
 
 ```php
 
-define('MY_DB_USER'			, '');	 					
-define('MY_DB_PASS'			, ''); 						
-define('MY_DB_SERVER'		, ''); 	
-define('MY_DB_NAME'			, '');
+define('MY_DB_USER'         , '');	 					
+define('MY_DB_PASS'         , ''); 						
+define('MY_DB_SERVER'       , ''); 	
+define('MY_DB_NAME'         , '');
 
 ```
