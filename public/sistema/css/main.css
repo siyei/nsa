@@ -1,0 +1,64 @@
+.circle-total{
+	padding:40px; 
+}
+.icon-big{
+	font-size: 3em;
+    min-height: 64px;
+}
+.icon-big i{
+	font-weight: 700;
+}
+.numbers{
+	font-size: 2em;
+    text-align: right;
+}
+.nomarginbutton{
+	margin-bottom: 0px;
+}
+.cont_txt_chat h4{
+	margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+}
+.cont_txt_chat p{
+	margin: 0px;
+    font-size: 11px;
+}
+.notopborder tr td{
+	border-top : none !important;
+}
+.cont_text_chat{
+	width: 100%;
+	padding: 20px 0px;
+	background-image: url(../wstyle/img/fondowsp.png);
+	background-color: #e5ddd5;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.con_chat{
+	max-height: 75vh;
+	overflow-y: scroll;
+}
+.con_chat_r{
+	min-height: 400px;
+	max-height: 65vh;
+	overflow-y: auto;
+}
+.label_red{
+	padding: 5px 10px;
+	background-color: #FB404B;
+	color: #fff;
+	border-radius: 3px;
+}
+.label_green{
+	padding: 5px 10px;
+	background-color: #87CB16;
+	color: #fff;
+	border-radius: 3px;
+}
+.label_yellow{
+	padding: 5px 10px;
+	background-color: #fbaa44;
+	color: #fff;
+	border-radius: 3px;
+}
