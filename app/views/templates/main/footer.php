@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row justify-content-around">
-            <div class="col-md-2 fx-flex text-center">
+            <div class="col-md-2 fx-flex text-center mobile-footer">
                 <div class="logo-footer">
                     <img src="/img/nsa-logo-footer.svg" class="img-fluid" />
                 </div>
@@ -9,25 +9,25 @@
                 <p class="small text-white mb-0">Agente autorizado</p>
                 
                 <div class="img-west">
-                    <img src="/img/wu.png" class="img-fluid" alt="" />
+                    <img src="/img/wu.png" class="img-fluid img-mobile" alt="" />
                 </div>
 
                 <p class="small text-white mb-0">Transporte oficial</p>
                 <div class="img-fut">
-                    <img src=/img/fut-oficial.png class="img-fluid" />
+                    <img src=/img/fut-oficial.png class="img-fluid img-mobile" />
                 </div>
             </div>
-            <div class="col-md-3 flex-center">
+            <div class="col-md-3 flex-center mobile-footer">
                 <ul class="footer-list">
                     <li><i class="zwicon-chevron-right"></i> <a href="/nosotros">Nosotros</a></li>
                     <li><i class="zwicon-chevron-right"></i> <a href="/contacto">Encontranos</a></li>
                     <li><i class="zwicon-chevron-right"></i> <a href="/nosotros#trabajaconnosotros">Trabajá con nosotros</a></li>
-                    <li><i class="zwicon-chevron-right"></i> <a href="/">Descargá nuestra app</a></li>
+                    <!-- <li><i class="zwicon-chevron-right"></i> <a href="/">Descargá nuestra app</a></li> -->
                     <li><i class="zwicon-chevron-right"></i> <a href="/">Compra de pasajes</a></li>
                     <li><i class="zwicon-chevron-right"></i> <a href="/envio-de-dinero">Envío de dinero</a></li>
                 </ul>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mobile-footer">
                 <h4 class="text-white fs-6 fw-bold">Nuestros locales</h4>
                 <div class="flex-center">
                     <ul class="footer-list">
@@ -39,7 +39,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mobile-footer">
                 <h4 class="text-white fs-6 fw-bold">Teléfonos</h4>
                 <div class="flex-center">
                     <ul class="footer-list">
@@ -59,7 +59,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mobile-footer">
                 <h4 class="text-white fs-6 fw-bold mb-4">Descargá nuestra app</h4>
                 <div class="flex-center">
                         <a class="dow-app mb-2" href="https://play.google.com/store/apps/details?id=com.opentech.py.nsa&hl=es&gl=US" target="_blank">

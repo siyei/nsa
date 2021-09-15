@@ -35,6 +35,16 @@ $map->connect("/listdestinos",                  array('carpeta' => 'destinos', '
 $map->connect("/adddestino",                    array('carpeta' => 'destinos', 'controller' => 'sistema', 'action' => 'adddestino'));
 $map->connect("/editdestino/:iddestino",        array('carpeta' => 'destinos', 'controller' => 'sistema', 'action' => 'editdestino'));
 $map->connect("/sabethumbnail",                 array('carpeta' => 'destinos', 'controller' => 'sistema', 'action' => 'sabethumbnail'));
+$map->connect("/deletedestino",                 array('controller' => 'sistema', 'action' => 'deletedestino'));
+//------------------
+// DESTINOS
+//------------------
+$map->connect("/listturismo",                  array('carpeta' => 'turismo', 'controller' => 'sistema', 'action' => 'listturismo'));
+$map->connect("/addturismo",                   array('carpeta' => 'turismo', 'controller' => 'sistema', 'action' => 'addturismo'));
+$map->connect("/editturismo/:idturismo",       array('carpeta' => 'turismo', 'controller' => 'sistema', 'action' => 'editturismo'));
+$map->connect("/sabethumbnailturismo",         array('carpeta' => 'destinos', 'controller' => 'sistema', 'action' => 'sabethumbnailturismo'));
+$map->connect("/deleteturismo",                array('controller' => 'sistema', 'action' => 'deleteturismo'));
+
 
 
 $map->connect("/", array('controller' => 'main', 'action' => 'index'));

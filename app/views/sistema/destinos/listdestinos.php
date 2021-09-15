@@ -105,7 +105,7 @@
     function deleteElement(iddestino) {
         Swal.fire({
             title: '¿Estás seguro?',
-            text: "Si elimina una marca perderá todos sus datos!",
+            text: "Si elimina perderá todos sus datos!",
             showDenyButton: true,
             
             confirmButtonText: "Si, eliminar",

@@ -35,12 +35,12 @@ switch($GLOBALS['menu']){
                 <p>Usuarios</p>
             </a>
         </li>
-        <li <?=$b?>>
-            <a href="/banner-home">
+        <!-- <li>
+            <a href="/listbannerhome">
                 <i class="pe-7s-photo"></i>
                 <p>Banner Home</p>
             </a>
-        </li>
+        </li> -->
         <li <?=$c?>>
             <a href="/listdestinos">
                 <i class="pe-7s-network"></i>
@@ -48,12 +48,18 @@ switch($GLOBALS['menu']){
             </a>
         </li>
         <li <?=$d?>>
-            <a href="/marcas">
-                <i class="pe-7s-photo-gallery"></i>
-                <p>Marcas</p>
+            <a href="/listturismo">
+                <i class="pe-7s-network"></i>
+                <p>Turismo</p>
             </a>
         </li>
         <li <?=$e?>>
+            <a href="/listpais">
+                <i class="pe-7s-network"></i>
+                <p>Países</p>
+            </a>
+        </li>
+        <li>
             <a href="/logout">
                 <i class="pe-7s-power"></i>
                 <p>Salir</p>

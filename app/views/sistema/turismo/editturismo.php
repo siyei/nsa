@@ -1,7 +1,6 @@
 ﻿<?php Template::load('sistema/head.php'); ?>
 <link href="/sistema/uploadimg/uploadfile.css" rel="stylesheet">
 <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
-
 <body>
 
     <div class="wrapper">
@@ -20,38 +19,44 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Agregar destino</h4>
+                                    <h4 class="title">Editar turismo</h4>
                                 </div>
                                 <div class="content">
                                     <div class="alert alert-warning alert-dismissible" role="alert">
                                         <strong>Warning!</strong> Imágenes de tamaño máximo de 2 MB. 16:9 Ratio
                                     </div>
-
+                                    <div class="vistaprevia" style="margin-bottom: 15px;">
+                                        <img src="/img/turismo/<?=$this->data->thumbnail;?>" class="img-responsive img-rounded" />
+                                    </div>
                                     <div id="upthumbnail" style="margin-bottom: 20px;">Upload</div>
                                     <div class="form-group">
                                         <label>País</label>
                                         <select class="form-control" id="idpais">
                                             <?php foreach ($this->pais as $pais) { ?>
-                                                <option value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php if($pais->idpais == $this->data->idpais){ ?>
+                                                    <option selected value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php }else{ ?>
+                                                    <option value="<?= $pais->idpais; ?>"><?= $pais->pais; ?></option>
+                                                <?php } ?>
                                             <?php } ?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label>Destino</label>
-                                        <input type="text" class="form-control" id="destino" name="destino" required="true" placeholder="Ej.: Encarnación" />
+                                        <input type="text" class="form-control" id="destino" name="destino" required="true" placeholder="Ej.: Encarnación" value="<?=$this->data->destino;?>" />
                                     </div>
                                     <div class="form-group">
                                         <label>Precio</label>
-                                        <input type="text" class="form-control" id="precio" name="precio" required="true" placeholder="Ej.: 280000">
+                                        <input type="text" class="form-control" id="precio" name="precio" required="true" placeholder="Ej.: 280000" value="<?=$this->data->precio;?>" />
                                     </div>
                                     <div class="form-group">
                                         <label>Detalles</label>
-                                        <textarea class="form-control" id="detalles" rows="6"></textarea>
+                                        <textarea class="form-control" id="detalles" rows="6"><?=$this->data->detalles;?></textarea>
                                     </div>
 
                                     <div id="mjs"></div>
 
-                                    <a href="/listdestinos" class="btn btn-info btn-fill btn-wd pull-left"><i class="fa fa-reply"></i> Atrás</a>
+                                    <a href="/listturismo" class="btn btn-info btn-fill btn-wd pull-left"><i class="fa fa-reply"></i> Atrás</a>
                                     <button id="btn-save" class="btn btn-success btn-fill btn-wd pull-right"><i class="fa fa-cloud"></i> Guardar</button>
                                     <div class="clearfix"></div>
                                 </div>
@@ -98,10 +103,10 @@
         } );
     $(document).ready(() => {
         var img1 = $('#upthumbnail').uploadFile({
-            url: "/sabethumbnail",
-            uploadStr: '<i class="fa fa-picture-o"></i> Subir imágen del destino',
+            url: "/sabethumbnailturismo",
+            uploadStr: '<i class="fa fa-picture-o"></i> Cambiar imágen del destino',
             multiple: false,
-            autoSubmit: false,
+            autoSubmit: true,
             showPreview: true,
             dragDrop: true,
             sequential: true,
@@ -112,40 +117,32 @@
             },
             dynamicFormData: function() {
                 var data = {
-                    iddestino: iddestino
+                    idturismo: <?=$this->params['get']['idturismo'];?>
                 }
                 return data;
             },
             afterUploadAll: function(obj) {
-                mfx(3, "Procesando...", "#mjs");
-                img1.reset();
-                $('#destino').val('');
-                $('#precio').val('');
-                $('#btn-save').prop('disabled', false);
+                mfx(3, "Imagen cargada...", "#mjs");
             }
         });
 
         $('#btn-save').on('click', function() {
-            if (thumbnailSelected == false) {
-                mfx(1, "Ingrese una imágen", "#mjs");
+            if ($('#destino').val() == '') {
+                mfx(1, "Ingrese el destino", "#mjs");
             } else {
-                if ($('#destino').val() == '') {
-                    mfx(1, "Ingrese el destino", "#mjs");
-                } else {
-                    $(this).prop('disabled', true);
-                    mfx(2, "Procesando fotos...", "#mjs");
-                    $.post('/adddestino', {
-                        idpais: $('#idpais').val(),
-                        destino: $('#destino').val(),
-                        precio: $('#precio').val(),
-                        detalles: editor.getData()
-                    }, function(r) {
-                        iddestino = r.iddestino;
-                        img1.startUpload();
-                    }, 'json');
-                }
+                $(this).prop('disabled', true);
+                mfx(2, "Procesando fotos...", "#mjs");
+                $.post('/editturismo', {
+                    idturismo : <?=$this->params['get']['idturismo'];?>,
+                    idpais: $('#idpais').val(),
+                    destino: $('#destino').val(),
+                    precio: $('#precio').val(),
+                    detalles: editor.getData()
+                }, function(r) {
+                    $('#btn-save').prop('disabled', false);
+                    mfx(0, "Datos editados.", "#mjs");
+                }, 'json');
             }
-
         });
 
     });

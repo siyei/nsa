@@ -24,7 +24,7 @@
             </div>
             <div class="row justify-content-center d-flex align-items-center mt-0">
                 <div class="col-md-2 mb-3 text-center">
-                    <img src="/img/wu.png" class="img-fluid" />
+                    <img src="/img/wu.png" class="img-fluid img-mobile" />
                 </div>
                 <div class="col-md-4">
                     <p class="text-grey mb-0">

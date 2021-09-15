@@ -9,10 +9,10 @@ define('TEMPLATEFX' 		, 'blue');
 define('BGMENU'				, '');
 
 
-define('MY_DB_USER'			, 'root');	 					
-define('MY_DB_PASS'			, 'root'); 						
-define('MY_DB_SERVER'		, 'localhost'); 	
-define('MY_DB_NAME'			, 'nsa');
+define('MY_DB_USER'			, '');	 					
+define('MY_DB_PASS'			, ''); 						
+define('MY_DB_SERVER'		, ''); 	
+define('MY_DB_NAME'			, '');
 
 
 /* Email PHP */

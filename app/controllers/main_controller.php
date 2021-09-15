@@ -28,7 +28,7 @@ class MainController extends ActionController {
 		$iddestino 			= $this->params['get']['iddestino'];
 		
 
-		$this->data  		= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais WHERE de.iddestino = '$iddestino' ORDER BY de.iddestino ASC LIMIT 4");
+		$this->data  		= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais WHERE de.iddestino = '$iddestino' ORDER BY de.iddestino ASC");
 		$this->allDestino 	= Destino::find_by_sql("SELECT * FROM destinos de INNER JOIN pais pa ON pa.idpais = de.idpais ORDER BY de.iddestino ASC");
 	}
 	function encomiendas(){
@@ -46,10 +46,17 @@ class MainController extends ActionController {
 	function turismo(){
 		$GLOBALS['title']	= "NSA - Turismo";
 		$GLOBALS['menu'] 	= 0;
+
+		$this->allTurismo	= Turismo::find_by_sql("SELECT * FROM turismos tu INNER JOIN pais pa ON pa.idpais = tu.idpais ORDER BY tu.idturismo ASC");
 	}
 	function turismo_detalles(){
 		$GLOBALS['title']	= "NSA - Turismo detalles";
 		$GLOBALS['menu'] 	= 0;
+
+		$idturismo 			= $this->params['get']['idturismo'];
+
+		$this->data  		= Turismo::find_by_sql("SELECT * FROM turismos tu INNER JOIN pais pa ON pa.idpais = tu.idpais WHERE tu.idturismo = '$idturismo' ORDER BY tu.idturismo ASC");
+		$this->allTurismo	= Turismo::find_by_sql("SELECT * FROM turismos tu INNER JOIN pais pa ON pa.idpais = tu.idpais ORDER BY tu.idturismo ASC");
 	}
 	function nosotros(){
 		$GLOBALS['title']	= "NSA - Nosotros";

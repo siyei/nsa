@@ -1,0 +1,36 @@
+@media (max-width: 576px) {
+    .logo-footer {
+        width: 34%;
+    }
+    .mobile-footer{
+        margin-bottom: 30px;
+    }
+    .navbar-collapse{
+        margin-top: 19px;
+    }
+    .navbar-nav{
+        margin-top: 22px;
+    }
+    .img-mobile{
+        width: 50%;
+    }
+    .margin-top-desk{
+        margin-top : 0px;
+    }
+    .cont-buscador{
+        position: initial;
+        margin-top: 0px;
+    }
+    .con-white-form{
+        position:initial;
+        margin-top:0px;
+    }
+    .top-buscador{
+        position: initial;
+        display: none;
+    }
+    .paddin-top-index {
+        padding-top: 200px;
+    }
+}
+

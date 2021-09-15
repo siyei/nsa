@@ -1,6 +1,6 @@
 ﻿<?php Template::load('sistema/head.php'); ?>
 <link href="/sistema/uploadimg/uploadfile.css" rel="stylesheet">
-
+<script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
 <body>
 
     <div class="wrapper">
@@ -87,8 +87,16 @@
 
 <!-- upload -->
 <script src="/sistema/uploadimg/jquery.uploadfile.min.js"></script>
-
 <script type="text/javascript">
+    let editor;
+    ClassicEditor
+        .create( document.querySelector( '#detalles' ) )
+        .then( newEditor => {
+            editor = newEditor;
+        })
+        .catch( error => {
+            console.error( error );
+        } );
     var iddestino = 0;
     var thumbnailSelected = false;
     var BannerImgSelect = false;
@@ -132,7 +140,7 @@
                     idpais: $('#idpais').val(),
                     destino: $('#destino').val(),
                     precio: $('#precio').val(),
-                    detalles: $('#detalles').val()
+                    detalles: editor.getData()
                 }, function(r) {
                     $('#btn-save').prop('disabled', false);
                     mfx(0, "Datos editados.", "#mjs");

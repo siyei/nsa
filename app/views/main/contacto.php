@@ -2,48 +2,79 @@
 
 <body>
     <?php Template::load('/main/menu.php'); ?>
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="/img/img-banner-simple/parque-industrial.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block n-zindex">
-                    <h5>Contactenos</h5>
-                    <p>Todo en un mismo lugar</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="section section-color">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-4 mb-4">
-                    <div class="card card1">
-                        <img src="/img/parque-1.jpg" class="img-fluid" />
-                        <div class="card-body">
-                            <span class="badge rounded-pill bg-primary-badge mb-3">Paraguay</span>
-                            <h4>
-                                En Nuestra Señora de la Asunción 
-                                te ofrecemos un lugar donde:
-                            </h4>
-                            <ul class="lista-nsa">
-                                <li><i class="zwicon-checkmark"></i> Desarrollar tu industria o empresa con la mayor seguridad</li>
-                                <li><i class="zwicon-checkmark"></i> Servicios integrales y funcionales de parques.</li>
-                                <li><i class="zwicon-checkmark"></i> Un desarrollo con mas de 150.000 m² de superficie estratégicamente ubicados.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="card card1">
-                        <img src="/img/parque-2.jpg" class="img-fluid" />
-                        <div class="card-body">
-                            <span class="badge rounded-pill bg-primary-badge mb-3">¿Porqué elegirnos?</span>
-                            <h4>Ubicación estrategica infraestructura / Servicios internacionales / Tecnología seguridad y permisos</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    
+    <!-- CONTENT -->
+    <section class="section-color">
+
+      <!-- Content -->
+      <div class="container d-flex flex-column">
+        <div class="row align-items-center justify-content-between gx-0 min-vh-100">
+          <div class="col-12 col-md-5 align-self-stretch">
+
+            <!-- Image (mobile) -->
+            <img src="/img/bg-primary-ns.jpg" class="d-md-none img-cover" alt="...">
+
+            <!-- Image -->
+            <div class="d-none d-md-block vw-50 h-100 float-end bg-cover" style="background-image: url(/img/bg-primary-ns.jpg);"></div>
+
+          </div>
+          <div class="col-12 col-md-6 py-8 py-md-11">
+
+            <!-- Heading -->
+            <h2 class="fw-bold text-center mb-2">
+              Contáctenos
+            </h2>
+
+            <!-- Text -->
+            <p class="fs-lg text-center text-muted mb-0">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            </p>
+
+            <!-- Divider -->
+            <hr class="hr-sm my-6 my-md-8 mx-auto bg-gray-300">
+
+            <!-- Form -->
+            <form>
+              <div class="form-group mb-5">
+                <!-- Label -->
+                <label class="form-label" for="contactName">
+                  Nombre completo
+                </label>
+                <!-- Input -->
+                <input class="form-control" id="contactName" type="text" placeholder="Nombre completo">
+              </div>
+              <div class="form-group mb-5">
+                <!-- Label -->
+                <label class="form-label" for="contactEmail">
+                  E-mail
+                </label>
+                <!-- Input -->
+                <input class="form-control" id="contactEmail" type="email" placeholder="hola@domain.com">
+              </div>
+              <div class="form-group mb-5 d-none">
+
+                <!-- Label -->
+                <label for="contactMessage">
+                  Mensaje
+                </label>
+
+                <!-- Input -->
+                <textarea class="form-control" id="contactMessage" rows="5" placeholder="¡Cuéntanos en qué podemos ayudarte!"></textarea>
+
+              </div>
+              <div class="form-group mb-0">
+
+                <!-- Submit -->
+                <a href="#!" class="btn w-100 btn-primary lift">
+                  Enviar mensaje
+                </a>
+
+              </div>
+            </form>
+
+          </div>
+        </div> <!-- / .row -->
+      </div>
     </section>
     
 

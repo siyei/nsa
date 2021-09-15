@@ -1,5 +1,4 @@
 <?php Template::load('/main/head.php'); ?>
-
 <body>
     <?php Template::load('/main/menu.php'); ?>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -13,48 +12,8 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="galeriaturismo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Galería de fotos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="/img/servicios/destino.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/servicios/envio-dinero.jpg" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="/img/servicios/puntos-voy.jpg" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                </div>
-            </div>
-        </div>
-    </div>
+
+
     <section class="section section-color">
         <div class="container">
             <div class="row">
@@ -66,24 +25,63 @@
                     </p>
                 </div>
             </div>
-            <div class="row mt-5">
-                <div class="col">
-                    <h1><?=$this->data[0]->destino;?></h1>
-                    <p>
-                        <?=$this->data[0]->detalles;?>
-                    </p>
-                </div>
-                <div class="col-md-4">
+            <div class="row mt-5 gap-5 justify-content-center">
+                <div class="col-md-5">
                     <div class="card">
-                        <div class="card-body" data-bs-toggle="modal" data-bs-target="#galeriaturismo" style="cursor:pointer;">
-                            <img src="/img/destinos/<?=$this->data[0]->thumbnail;?>" class="img-fluid cursor-pointer"/>
-                            <p class="mt-2 mb-0 text-center">
-                                <?=$this->data[0]->destino;?>, galería de fotos
-                            </p>
+                        <div class="card-body">
+                            <img src="/img/destinos/<?=$this->data[0]->thumbnail;?>" class="img-fluid rounded text-center"/>
+                            <div class="row mt-3 align-items-center bottom-line">
+                                <div class="col-md-6">
+                                    <p class="mb-0 fw-bold text-color-primary">Precio por persona:</p>
+                                    <p class="fw-bold fs-4 text-color-primary"><?=toMil($this->data[0]->precio);?> Gs.</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row align-items-center mb-2">
+                                        <div class="col">
+                                            <p class="mb-0 fw-bold">Operado por:</p>
+                                        </div>
+                                        <div class="col">
+                                            <img src="/img/nsa-turismo-logo.svg" class="img-fluid" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col mt-3">
+                                    <p>
+                                        <?=$this->data[0]->detalles;?>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
                 </div>
+                <div class="col-md-4">
+                    <p class="fw-bold fs-5">
+                        Escribinos para tener más información del paquete <span class="text-color-primary"><?=$this->data[0]->destino;?> - <?=$this->data[0]->pais;?></span>
+                    </p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombrecompleto" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombrecompleto" placeholder="Juan Carlos Rotela">
+                        </div>
+                        <div class="mb-3">
+                            <label for="celular" class="form-label">Celular</label>
+                            <input type="text" class="form-control" id="celular" placeholder="0981-123-123">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea class="form-control" id="mensaje" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-primary px-5">Enviar</button>
+                    </form>
+                    
+                </div>
+                
             </div>
         </div>
     </section>
@@ -95,7 +93,7 @@
                     <p class="text-center sub-title-p">Elegí la mejor opción para vos</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- card -->
                 
                 <?php foreach($this->allDestino as $destino) { ?>

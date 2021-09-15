@@ -27,7 +27,7 @@
 		</ul>
 	</section>
     <!-- fin banner -->
-    <div class="container">
+    <div class="container margin-top-desk">
         <div class="row">
             <div class="col-md-12">
             <div class="cont-buscador">
@@ -59,25 +59,16 @@
                             <div class="col-md-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option>Lugar de partida</option>
-                                    <option value={1}>One</option>
-                                    <option value={2}>Two</option>
-                                    <option value={3}>Three</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option>Lugar de destino</option>
-                                    <option value={1}>One</option>
-                                    <option value={2}>Two</option>
-                                    <option value={3}>Three</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <select class="form-select" aria-label="Default select example">
                                     <option>Fecha de destino</option>
-                                    {/* <option value={1}>One</option>
-                                    <option value={2}>Two</option>
-                                    <option value={3}>Three</option> */}
                                 </select>
                             </div>
                             <div class="col-md-3">
@@ -91,8 +82,8 @@
             
         </div>
     </div>
-    <!-- fin buscador -->
-    <section class="section section-white bottom-line margin-top-index">
+    <!-- fin buscador margin-top-index -->
+    <section class="section section-white bottom-line paddin-top-index">
         <div class="container">
             <div class="row">
                 <div class="col">
@@ -117,23 +108,24 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-md-3 text-center">
-                    <a href="/destinos" class="btn btn-primary">Accedé a nuestra lista completa</a>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-4 text-center">
+                    <a href="/destinos" class="btn btn-primary py-2 px-4">Accedé a nuestra lista completa</a>
                 </div>
             </div>
         </div>
     </section>
+        
     <!-- fin salidas diarias -->
-    <section class="section section-white bottom-line margin-top-index">
+    <section class="section section-white bottom-line">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <h2 class="text-center fw-bold text-title">Líderes en calidad y servicios</h2>
-                    <p class="text-center sub-title-p">Conocé todos nuestros servicios que tenemos para vos</p>
+                    <p class="text-center sub-title-p">Conocé algúnos de nuestros servicios que tenemos para vos</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- card -->
                 <div class="col-md-3 mb-4">
                     <div class="card card2">
@@ -168,6 +160,33 @@
                         <div class="card-body">
                             <h4>Puntos VOY</h4>
                             <a href="/">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
+                        <img src="/img/servicios/encomiendas.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Encomiendas</h4>
+                            <a href="/encomiendas">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
+                        <img src="/img/servicios/cargas.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Cargas internacionales</h4>
+                            <a href="/cargas-internacionales">Ver más información <i class="zwicon-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="card card2">
+                        <img src="/img/servicios/operador.jpg" class="img-fluid" />
+                        <div class="card-body">
+                            <h4>Operador logístico</h4>
+                            <a href="/operador-logistico">Ver más información <i class="zwicon-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>

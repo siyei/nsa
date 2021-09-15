@@ -19,15 +19,15 @@
         </div>
     </section>
     <!-- fin intro -->
-    <section class="section section-color bottom-line margin-top-index">
+    <section class="section section-color bottom-line">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center fw-bold text-title">¿A dónde queres viajar?</h2>
+                    <h2 class="text-center fw-bold text-title">¿A dónde quieres viajar?</h2>
                     <p class="text-center sub-title-p">Salidas diarias</p>
                 </div>
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <!-- card -->
                 <?php foreach($this->allDestino as $destino) { ?>
                 <div class="col-md-3 mb-4">
@@ -44,11 +44,11 @@
                 </div>
                 <?php } ?>
             </div>
-            <div class="row justify-content-center">
+            <!-- <div class="row justify-content-center">
                 <div class="col-md-3 text-center">
                     <button class="btn btn-primary">Cargar más destinos</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- fin destinos -->

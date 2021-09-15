@@ -1,7 +1,6 @@
 ﻿<?php Template::load('sistema/head.php'); ?>
 <link href="/sistema/uploadimg/uploadfile.css" rel="stylesheet">
 <script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
-
 <body>
 
     <div class="wrapper">
@@ -20,7 +19,7 @@
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="header">
-                                    <h4 class="title">Agregar destino</h4>
+                                    <h4 class="title">Agregar turismo</h4>
                                 </div>
                                 <div class="content">
                                     <div class="alert alert-warning alert-dismissible" role="alert">
@@ -51,7 +50,7 @@
 
                                     <div id="mjs"></div>
 
-                                    <a href="/listdestinos" class="btn btn-info btn-fill btn-wd pull-left"><i class="fa fa-reply"></i> Atrás</a>
+                                    <a href="/listturismo" class="btn btn-info btn-fill btn-wd pull-left"><i class="fa fa-reply"></i> Atrás</a>
                                     <button id="btn-save" class="btn btn-success btn-fill btn-wd pull-right"><i class="fa fa-cloud"></i> Guardar</button>
                                     <div class="clearfix"></div>
                                 </div>
@@ -98,7 +97,7 @@
         } );
     $(document).ready(() => {
         var img1 = $('#upthumbnail').uploadFile({
-            url: "/sabethumbnail",
+            url: "/sabethumbnailturismo",
             uploadStr: '<i class="fa fa-picture-o"></i> Subir imágen del destino',
             multiple: false,
             autoSubmit: false,
@@ -112,7 +111,7 @@
             },
             dynamicFormData: function() {
                 var data = {
-                    iddestino: iddestino
+                    idturismo: idturismo
                 }
                 return data;
             },
@@ -121,6 +120,7 @@
                 img1.reset();
                 $('#destino').val('');
                 $('#precio').val('');
+                $('#detalles').val('');
                 $('#btn-save').prop('disabled', false);
             }
         });
@@ -134,13 +134,13 @@
                 } else {
                     $(this).prop('disabled', true);
                     mfx(2, "Procesando fotos...", "#mjs");
-                    $.post('/adddestino', {
+                    $.post('/addturismo', {
                         idpais: $('#idpais').val(),
                         destino: $('#destino').val(),
                         precio: $('#precio').val(),
                         detalles: editor.getData()
                     }, function(r) {
-                        iddestino = r.iddestino;
+                        idturismo = r.idturismo;
                         img1.startUpload();
                     }, 'json');
                 }

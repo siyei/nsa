@@ -25,10 +25,10 @@
                                 <div class="header">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <h4 class="no-top-padding">Lista de marcas</h4>
+                                            <h4 class="no-top-padding">Lista de turismo</h4>
                                         </div>
                                     </div>
-                                    <a href="/addmarcas" class="btn btn-success btn-fill"><i class="fa fa-sitemap"></i> Agregar marca</a>
+                                    <a href="/addturismo" class="btn btn-success btn-fill"><i class="fa fa-sitemap"></i> Agregar turismo</a>
                                 </div>
                                 <div class="content">
                                     <div class="fresh-datatables">
@@ -36,23 +36,23 @@
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>Logo</th>
-                                                    <th>Marcas</th>
-                                                    <th>Categoría</th>
+                                                    <th>Thumbnail</th>
+                                                    <th>País</th>
+                                                    <th>Destino</th>
                                                     <th class="disabled-sorting">Acción</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($this->data as $data) {
                                                     $i++; ?>
-                                                    <tr id="r<?= $data->idmarca; ?>">
+                                                    <tr id="r<?= $data->idturismo; ?>">
                                                         <td><?= $i; ?></td>
-                                                        <td><img src="/sistema/img/marcas/<?=$data->logo;?>" height="50" /></td>
-                                                        <td><?= $data->marca; ?></td>
-                                                        <td><?= $data->categoria; ?></td>
+                                                        <td><img src="/img/turismo/<?=$data->thumbnail;?>" height="50" /></td>
+                                                        <td><?= $data->pais;?></td>
+                                                        <td><?= $data->destino; ?></td>
                                                         <td>
-                                                            <a href="/editmarcas/<?= $data->idmarca; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Editar</a>
-                                                            <button onclick="deleteElement(<?= $data->idmarca; ?>);" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</button>
+                                                            <a href="/editturismo/<?=$data->idturismo; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Editar</a>
+                                                            <button onclick="deleteElement(<?= $data->idturismo; ?>);" class="btn btn-danger"><i class="fa fa-trash"></i> Eliminar</button>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
@@ -102,22 +102,22 @@
         });
     });
 
-    function deleteElement(idmarca) {
+    function deleteElement(idturismo) {
         Swal.fire({
             title: '¿Estás seguro?',
-            text: "Si elimina una marca perderá todos sus datos!",
+            text: "Si elimina perderá todos sus datos!",
             showDenyButton: true,
             
             confirmButtonText: "Si, eliminar",
             denyButtonText: "Cancelar",
         }).then((result) => {
             if(result.isConfirmed) {
-                $.post('/deletemarcas',
+                $.post('/deleteturismo',
                 {
-                    idmarca : idmarca
+                    idturismo : idturismo
                 }, function(r){
                     Swal.fire("Eliminado!", "", "success");
-                    $("#r"+idmarca).css({
+                    $("#r"+idturismo).css({
                         display : "none"
                     });
                 }, 'json');

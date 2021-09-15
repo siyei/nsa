@@ -12,4 +12,5 @@
     <link href="/css/zwicon.css" rel="stylesheet" />
     <link href="/css/style-banner.css" rel="stylesheet" />
     <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/responsive.css" rel="stylesheet" />
 </head>

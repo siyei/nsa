@@ -15,7 +15,7 @@
     </div>
     <section class="section section-color">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 mb-4">
                     <h2 class="text-left fw-bold text-title">Nuestra historia</h2>
                     <p class="text-grey">
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-5">
+            <div class="row justify-content-center mt-5 align-items-center">
                 <div class="col-md-6 mb-4 order-md-2">
                     <h2 class="text-left fw-bold text-title">Nuestra filosofía</h2>
                     <ul class="lista-nsa">
@@ -101,33 +101,6 @@
             </div>
         </div>
     </section>
-    <!-- Modal -->
-    <div class="modal fade" id="enviarcv" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Enviar datos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Mensajer:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div id="trabajaconnosotros"></div>
     <section class="section section-bg-primary-ns">
         <div class="container">
@@ -147,7 +120,7 @@
     </section>
     <section class="section section-color">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center align-items-center">
                 <div class="col-md-6 mb-4">
                     <h2 class="text-left fw-bold text-title">NSA y la sociedad</h2>
                     <p class="text-grey">
@@ -162,15 +135,48 @@
                     </p>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <img src="/img/nsa-ninos.jpg" class="img-fluid" />
+                    <img src="/img/nsa-ninos.jpg" class="img-fluid rounded" />
                 </div>
             </div>
         </div>
     </section>
 
-
+    <!-- Modal trabajar con nosotros -->
+    <div class="modal fade" id="enviarcv" tabindex="-1" aria-labelledby="enviardatos" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enviardatos">Enviar datos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Celular:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Mensajer:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <?php Template::load('/main/footer.php'); ?>
     <?php Template::load('/main/menuscript.php'); ?>
 </body>
-
 </html>
