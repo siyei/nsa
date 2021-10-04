@@ -63,7 +63,7 @@ class Dispatcher {
 		}
 		
 		call_user_func_array(array($klass, $this->map['action']), array());
-		
+
 		if($klass->redirection !== true) new ActionView($klass, $this->map);
 		
 	}
