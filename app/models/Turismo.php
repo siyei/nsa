@@ -1,5 +1,6 @@
 <?php
-class Turismo extends ActiveRecord\Model {
-			
+
+class Turismo extends ActiveRecord\Model
+{
+
 }
-?>

@@ -51,5 +51,3 @@ $map->connect("/", array('controller' => 'main', 'action' => 'index'));
 $map->connect("/*", array('controller' => 'main', 'action' => 'error'));
 
 $map->connect(":controller/:action/*");
-
-?>

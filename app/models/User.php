@@ -1,5 +1,6 @@
 <?php
-class User extends ActiveRecord\Model {
-			
+
+class User extends ActiveRecord\Model
+{
+
 }
-?>

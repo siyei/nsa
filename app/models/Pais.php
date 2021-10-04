@@ -1,5 +1,6 @@
 <?php
-class Pais extends ActiveRecord\Model {
-			
+
+class Pais extends ActiveRecord\Model
+{
+
 }
-?>

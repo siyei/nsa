@@ -1,5 +1,6 @@
 <?php
-class Destino extends ActiveRecord\Model {
-			
+
+class Destino extends ActiveRecord\Model
+{
+
 }
-?>
