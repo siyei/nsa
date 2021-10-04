@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * Tiene todas las funciones staticas para el procesamiento de cadenas
  *

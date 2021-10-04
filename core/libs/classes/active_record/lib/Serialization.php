@@ -17,7 +17,7 @@ use XmlWriter;
  * along with the method's returned value</li>
  * <li><b>include:</b> a string or array of associated models to include in the final serialized product.</li>
  * <li><b>only_method:</b> a method that's called and only the resulting array is serialized
- * <li><b>skip_instruct:</b> set to true to skip the <?xml ...?> declaration.</li>
+ * <li><b>skip_instruct:</b> set to true to skip the <?phpxml ...?> declaration.</li>
  * </ul>
  *
  * Example usage:

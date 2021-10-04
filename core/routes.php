@@ -1,4 +1,4 @@
-<?
+<?php
 //------ FRONT  -------
 $map->connect("/envio-de-dinero"		, array('controller' => 'main', 'action' => 'envio_de_dinero'));
 $map->connect("/tracking"				, array('controller' => 'main', 'action' => 'tracking'));

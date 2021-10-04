@@ -1,4 +1,4 @@
-<?
+<?php
 /**
  * @author Alvaro Talavera (alvarotala@gmail.com)
  * @class Router

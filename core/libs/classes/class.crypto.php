@@ -1,4 +1,4 @@
-<?
+<?php
 class Crypto {
 	
 	static function md5($str) {

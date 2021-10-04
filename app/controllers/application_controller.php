@@ -1,4 +1,4 @@
-<?
+<?php
 # place to common stuff's...
 
 class ApplicationController extends ActionController { 
